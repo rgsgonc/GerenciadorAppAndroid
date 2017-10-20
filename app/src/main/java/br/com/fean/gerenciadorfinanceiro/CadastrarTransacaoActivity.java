@@ -38,6 +38,10 @@ public class CadastrarTransacaoActivity extends AppCompatActivity {
         case R.id.exit:
             //add the function to perform here
             return(true);
+        case R.id.home:
+            Intent home = new Intent(CadastrarTransacaoActivity.this, TelaInicialActivity.class);
+            startActivity(home);
+            return(true);
     }
         return(super.onOptionsItemSelected(item));
     }

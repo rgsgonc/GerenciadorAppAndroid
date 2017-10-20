@@ -17,7 +17,7 @@ public class CadastrarCategoriaActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Inflate the menu; thhhis adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -38,6 +38,10 @@ public class CadastrarCategoriaActivity extends AppCompatActivity {
             return(true);
         case R.id.exit:
             //add the function to perform here
+            return(true);
+        case R.id.home:
+            Intent home = new Intent(CadastrarCategoriaActivity.this, TelaInicialActivity.class);
+            startActivity(home);
             return(true);
     }
         return(super.onOptionsItemSelected(item));

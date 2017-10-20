@@ -40,6 +40,10 @@ public class TelaInicialActivity extends AppCompatActivity {
         case R.id.exit:
             //add the function to perform here
             return(true);
+        case R.id.home:
+            Intent home = new Intent(TelaInicialActivity.this, TelaInicialActivity.class);
+            startActivity(home);
+            return(true);
     }
         return(super.onOptionsItemSelected(item));
     }
