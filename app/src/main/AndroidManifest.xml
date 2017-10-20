@@ -30,7 +30,7 @@
             android:label="@string/title_activity_tela_inicial" />
         <activity android:name=".CadastrarTransacaoActivity" />
         <activity android:name=".SobreActivity" />
-        <activity android:name=".GraficoActivity"></activity>
+        <activity android:name=".GraficoActivity" />
     </application>
 
 </manifest>
