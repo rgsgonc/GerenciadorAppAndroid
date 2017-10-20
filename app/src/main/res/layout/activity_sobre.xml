@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.fean.gerenciadorfinanceiro.SobreActivity">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_sobre"
+            android:textAlignment="center"
+            android:layout_marginTop="30dp"
+            android:textSize="60dp"
+            android:fontFamily="sans-serif-condensed"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_versao"
+            android:textAlignment="center"
+            android:layout_marginTop="130dp"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-condensed"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_celular"
+            android:textAlignment="center"
+            android:layout_marginTop="160dp"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-condensed"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_desenvolvido"
+            android:textAlignment="center"
+            android:layout_marginTop="190dp"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-condensed"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_disciplina"
+            android:textAlignment="center"
+            android:layout_marginTop="220dp"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-condensed"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_alunos"
+            android:textAlignment="center"
+            android:layout_marginTop="250dp"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-condensed"
+            />
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
