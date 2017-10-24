@@ -35,4 +35,10 @@
     <string name="label_desenvolvido">Desenvolvido na FEAN</string>
     <string name="label_alunos">Rafael e Guilherme</string>
     <string name="label_disciplina">Programação</string>
+    <string name="data">Data</string>
+    <string name="debito">Débito</string>
+    <string name="credito">Crédito</string>
+    <string name="categoria">Categoria</string>
+    <string name="descricao">Descrição</string>
+    <string name="valor">Valor</string>
 </resources>
