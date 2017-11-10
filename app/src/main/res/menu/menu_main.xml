@@ -29,6 +29,13 @@
     </item>
 
     <item
+        android:id="@+id/cadastrar_categoria"
+        android:icon="@android:drawable/ic_dialog_info"
+        app:showAsAction="never"
+        android:title="@string/cadastrar_categoria">
+    </item>
+
+    <item
         android:id="@+id/exit"
         app:showAsAction="never"
         android:title="@string/sair">

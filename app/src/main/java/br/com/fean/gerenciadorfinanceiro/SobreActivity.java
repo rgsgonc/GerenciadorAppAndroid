@@ -35,6 +35,10 @@ public class SobreActivity extends AppCompatActivity {
             Intent sobre = new Intent(SobreActivity.this, SobreActivity.class);
             startActivity(sobre);
             return(true);
+        case R.id.cadastrar_categoria:
+            Intent cadastrarCategoria = new Intent(SobreActivity.this, CadastrarCategoriaActivity.class);
+            startActivity(cadastrarCategoria);
+            return(true);
         case R.id.exit:
             //add the function to perform here
             return(true);
