@@ -40,19 +40,19 @@
             <EditText android:id="@+id/input_orcamento_mensal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Orçamento Mensal" />
+                android:hint="Orçamento Mensal"
+                android:inputType="numberDecimal"/>
         </android.support.design.widget.TextInputLayout>
 
         <!-- Signup Button -->
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_signup"
+        <Button
+            android:id="@+id/btn_cadastrar_categoria"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
             android:padding="12dp"
-            android:text="@string/button_cadastrar_categoria"
-            android:onClick="addNovoUsuario"/>
+            android:text="@string/button_cadastrar_categoria"/>
 
     </LinearLayout>
 </ScrollView>

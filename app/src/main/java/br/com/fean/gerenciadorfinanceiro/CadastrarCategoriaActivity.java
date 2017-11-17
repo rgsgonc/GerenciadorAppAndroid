@@ -5,14 +5,35 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 public class CadastrarCategoriaActivity extends AppCompatActivity {
+    private Button btnCadastrarCategoria;
+    private EditText nomeCategoria, orcamento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar_categoria);
+
+        btnCadastrarCategoria = (Button) findViewById(R.id.btn_cadastrar_categoria);
+        nomeCategoria = (EditText) findViewById(R.id.input_nome_categoria);
+        orcamento = (EditText) findViewById(R.id.input_orcamento_mensal);
+
+        btnCadastrarCategoria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Categoria categoria = new Categoria();
+
+                categoria.setNomeCategoria(nomeCategoria.getText().toString());
+                categoria.setOrcamento(Double.parseDouble(orcamento.getText().toString()));
+
+                new CategoriaTask(v.getContext(), categoria).execute();
+            }
+        });
     }
 
     @Override
@@ -50,4 +71,6 @@ public class CadastrarCategoriaActivity extends AppCompatActivity {
     }
         return(super.onOptionsItemSelected(item));
     }
+
+
 }
