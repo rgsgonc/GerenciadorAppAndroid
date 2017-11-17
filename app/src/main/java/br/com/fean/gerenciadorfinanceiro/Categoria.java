@@ -43,4 +43,17 @@ public class Categoria {
         public void setOrcamento(Double orcamento) {
             this.orcamento = orcamento;
         }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(this.id + " - ");
+        stringBuilder.append(this.nomeCategoria + " ");
+
+        if(this.orcamento != null) {
+            stringBuilder.append("R$"+this.getOrcamento());
+        }
+
+        return stringBuilder.toString();
+    }
 }

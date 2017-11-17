@@ -41,6 +41,10 @@ public class TelaInicialActivity extends AppCompatActivity {
             Intent cadastrarCategoria = new Intent(TelaInicialActivity.this, CadastrarCategoriaActivity.class);
             startActivity(cadastrarCategoria);
             return(true);
+        case R.id.lista_categoria:
+            Intent listarCategoria = new Intent(TelaInicialActivity.this,CategoriaActivity.class);
+            startActivity(listarCategoria);
+            return(true);
         case R.id.exit:
             //add the function to perform here
             return(true);
