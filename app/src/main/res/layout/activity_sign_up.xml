@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_name"
+            <EditText android:id="@+id/input_nome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_address"
+            <EditText android:id="@+id/input_endereco"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPostalAddress"
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_mobile"
+            <EditText android:id="@+id/input_telefone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -80,36 +80,22 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_password"
+            <EditText android:id="@+id/input_senha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:hint="Senha"/>
         </android.support.design.widget.TextInputLayout>
 
-        <!-- Password Re-enter Label -->
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_reEnterPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:hint="Digite a senha novamente"/>
-        </android.support.design.widget.TextInputLayout>
-
         <!-- Signup Button -->
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_signup"
+            android:id="@+id/btn_cadastrar_usuario"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
             android:padding="12dp"
-            android:text="@string/criar_conta"
-            android:onClick="addNovoUsuario"/>
+            android:text="@string/criar_conta" />
 
         <Button android:id="@+id/link_login"
             android:layout_width="fill_parent"

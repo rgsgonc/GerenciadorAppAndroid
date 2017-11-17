@@ -12,15 +12,15 @@ import retrofit2.Call;
  * Created by rafael on 16/11/17.
  */
 
-public class CategoriaTask extends AsyncTask<Void,Void,Categoria> {
+public class UsuarioTask extends AsyncTask<Void,Void,Usuario> {
 
     private ProgressDialog progressDialog;
     private Context context;
-    private Categoria categoria;
+    private Usuario usuario;
 
-    public CategoriaTask(Context context, Categoria categoria) {
+    public UsuarioTask(Context context, Usuario usuario) {
         this.context = context;
-        this.categoria = categoria;
+        this.usuario = usuario;
     }
 
     @Override
@@ -32,33 +32,33 @@ public class CategoriaTask extends AsyncTask<Void,Void,Categoria> {
     }
 
     @Override
-    protected Categoria doInBackground(Void... voids) {
-        Categoria mensagem = sendPOST();
+    protected Usuario doInBackground(Void... voids) {
+        Usuario mensagem = sendPOST();
         return mensagem ;
     }
 
-    private Categoria sendPOST()  {
+    private Usuario sendPOST()  {
 
-        Categoria responseBody = null;
+        Usuario responseBody = null;
 
         try {
 
-            Call<Categoria> postCategoria = ApiClient.getClientWithGson()
-                    .newBuilder().build().create(CategoriaInterface.class).cadastro(categoria);
+            Call<Usuario> postUsuario = ApiClient.getClientWithGson()
+                    .newBuilder().build().create(UsuarioInterface.class).cadastro(usuario);
 
-            responseBody = postCategoria.execute().body();
+            responseBody = postUsuario.execute().body();
 
         } catch (Exception e){
             e.printStackTrace();
-            Log.e("CategoriaTask", e.getMessage());
+            Log.e("UsuarioTask", e.getMessage());
         }
 
         return responseBody;
     }
 
     @Override
-    protected void onPostExecute(Categoria categoria) {
+    protected void onPostExecute(Usuario usuario) {
         progressDialog.dismiss();
-        Toast.makeText(context, categoria.getNomeCategoria()+" cadastrada com sucesso!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, usuario.getNome()+" cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
     }
 }
