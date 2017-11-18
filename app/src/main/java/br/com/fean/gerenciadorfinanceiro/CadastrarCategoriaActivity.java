@@ -8,11 +8,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.io.Serializable;
 
 
 public class CadastrarCategoriaActivity extends AppCompatActivity {
     private Button btnCadastrarCategoria;
     private EditText nomeCategoria, orcamento;
+    private Categoria categoriaAtual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +30,30 @@ public class CadastrarCategoriaActivity extends AppCompatActivity {
         btnCadastrarCategoria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Categoria categoria = new Categoria();
+                Categoria categoriaTela = new Categoria();
 
-                categoria.setNomeCategoria(nomeCategoria.getText().toString());
-                categoria.setOrcamento(Double.parseDouble(orcamento.getText().toString()));
+                if(categoriaAtual != null){
+                    categoriaTela.setId(categoriaAtual.getId());
+                }
 
-                new CategoriaTask(v.getContext(), categoria).execute();
+                categoriaTela.setNomeCategoria(nomeCategoria.getText().toString());
+                categoriaTela.setOrcamento(Double.parseDouble(orcamento.getText().toString()));
+
+
+                new CategoriaTask(v.getContext(), categoriaTela).execute();
             }
         });
+
+        Intent intentAtivadora = getIntent();
+        Categoria categoria = (Categoria) intentAtivadora.getSerializableExtra("categoria");
+
+        if(categoria != null){
+            nomeCategoria.setText(categoria.getNomeCategoria());
+            orcamento.setText(String.valueOf(categoria.getOrcamento()));
+            categoriaAtual = categoria;
+            btnCadastrarCategoria.setText(R.string.btn_alterar_categoria);
+        }
+
     }
 
     @Override
@@ -57,12 +77,13 @@ public class CadastrarCategoriaActivity extends AppCompatActivity {
             Intent sobre = new Intent(CadastrarCategoriaActivity.this, SobreActivity.class);
             startActivity(sobre);
             return(true);
-        case R.id.cadastrar_categoria:
-            Intent cadastrarCategoria = new Intent(this, CadastrarCategoriaActivity.class);
-            startActivity(cadastrarCategoria);
+        case R.id.lista_categoria:
+            Intent listaCategoria = new Intent(this, CategoriaActivity.class);
+            startActivity(listaCategoria);
             return(true);
         case R.id.exit:
-            //add the function to perform here
+            Intent login = new Intent(CadastrarCategoriaActivity.this, LoginActivity.class);
+            startActivity(login);
             return(true);
         case R.id.home:
             Intent home = new Intent(CadastrarCategoriaActivity.this, TelaInicialActivity.class);

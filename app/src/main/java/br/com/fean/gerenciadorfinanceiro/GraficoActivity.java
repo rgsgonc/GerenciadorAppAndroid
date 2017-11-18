@@ -35,12 +35,13 @@ public class GraficoActivity extends AppCompatActivity {
             Intent sobre = new Intent(GraficoActivity.this, SobreActivity.class);
             startActivity(sobre);
             return(true);
-        case R.id.cadastrar_categoria:
-            Intent cadastrarCategoria = new Intent(this, CadastrarCategoriaActivity.class);
-            startActivity(cadastrarCategoria);
+        case R.id.lista_categoria:
+            Intent listaCategoria = new Intent(this, CategoriaActivity.class);
+            startActivity(listaCategoria);
             return(true);
         case R.id.exit:
-            //add the function to perform here
+            Intent login = new Intent(GraficoActivity.this, LoginActivity.class);
+            startActivity(login);
             return(true);
         case R.id.home:
             Intent home = new Intent(GraficoActivity.this, TelaInicialActivity.class);

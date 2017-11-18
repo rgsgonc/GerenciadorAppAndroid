@@ -29,6 +29,7 @@ public class LoginTask extends AsyncTask<Void,Void,Boolean> {
     protected void onPreExecute() {
         progressDialog = new ProgressDialog(context);
         progressDialog.setTitle("Aguarde....");
+        progressDialog.setMessage("Estamos conectando em nossos servidores");
         progressDialog.setCancelable(false);
         progressDialog.show();
     }

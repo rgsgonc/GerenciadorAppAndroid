@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by rafael on 16/11/17.
  */
 
-public class Categoria {
+public class Categoria implements Serializable {
         private int id;
         private String nomeCategoria;
         private Double orcamento;

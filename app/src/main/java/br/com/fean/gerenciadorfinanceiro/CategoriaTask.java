@@ -43,10 +43,18 @@ public class CategoriaTask extends AsyncTask<Void,Void,Categoria> {
 
         try {
 
-            Call<Categoria> postCategoria = ApiClient.getClientWithGson()
-                    .newBuilder().build().create(CategoriaInterface.class).cadastro(categoria);
+            Call<Categoria> call = null;
 
-            responseBody = postCategoria.execute().body();
+            if(categoria.getId() != 0) {
+                call = ApiClient.getClientWithGson()
+                        .newBuilder().build().create(CategoriaInterface.class).update(categoria);
+            } else {
+                call = ApiClient.getClientWithGson()
+                        .newBuilder().build().create(CategoriaInterface.class).cadastro(categoria);
+            }
+
+
+            responseBody = call.execute().body();
 
         } catch (Exception e){
             e.printStackTrace();

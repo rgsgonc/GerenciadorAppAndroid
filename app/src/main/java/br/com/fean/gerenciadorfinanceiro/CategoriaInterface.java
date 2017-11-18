@@ -8,6 +8,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 
 /**
  * Created by rafael on 16/11/17.
@@ -22,5 +23,10 @@ public interface CategoriaInterface {
 
     @GET("categoria/list")
     Call<List<Categoria>> list();
+
+    @PUT("categoria/update")
+    @Headers("Content-Type: application/json")
+    Call<Categoria> update(@Body Categoria categoria);
+
 
 }

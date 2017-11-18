@@ -35,12 +35,13 @@ public class CadastrarTransacaoActivity extends AppCompatActivity {
             Intent sobre = new Intent(CadastrarTransacaoActivity.this, SobreActivity.class);
             startActivity(sobre);
             return(true);
-        case R.id.cadastrar_categoria:
-            Intent cadastrarCategoria = new Intent(CadastrarTransacaoActivity.this, CadastrarCategoriaActivity.class);
-            startActivity(cadastrarCategoria);
+        case R.id.lista_categoria:
+            Intent listaCategoria = new Intent(CadastrarTransacaoActivity.this, CategoriaActivity.class);
+            startActivity(listaCategoria);
             return (true);
         case R.id.exit:
-            //add the function to perform here
+            Intent login = new Intent(CadastrarTransacaoActivity.this, LoginActivity.class);
+            startActivity(login);
             return(true);
         case R.id.home:
             Intent home = new Intent(CadastrarTransacaoActivity.this, TelaInicialActivity.class);

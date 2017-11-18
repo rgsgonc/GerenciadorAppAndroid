@@ -3,24 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
 
     <item
-        android:id="@+id/home"
-        android:icon="@drawable/icone_home"
-        app:showAsAction="always"
-        android:title="@string/nova_transacao"/>
-
-
-    <item
         android:id="@+id/add"
         android:icon="@drawable/icone_mais"
         app:showAsAction="always"
         android:title="@string/nova_transacao"/>
 
     <item
-        android:id="@+id/grafico"
-        android:icon="@drawable/icone_grafico"
-        app:showAsAction="always|withText"
-        android:title="@string/titulo_grafico"/>
-
+        android:id="@+id/about"
+        android:icon="@android:drawable/ic_dialog_info"
+        app:showAsAction="never"
+        android:title="@string/titulo_sobre">
+    </item>
 
     <item
         android:id="@+id/lista_categoria"
@@ -30,10 +23,10 @@
     </item>
 
     <item
-        android:id="@+id/about"
+        android:id="@+id/graficos"
         android:icon="@android:drawable/ic_dialog_info"
         app:showAsAction="never"
-        android:title="@string/titulo_sobre">
+        android:title="@string/titulo_grafico">
     </item>
 
     <item

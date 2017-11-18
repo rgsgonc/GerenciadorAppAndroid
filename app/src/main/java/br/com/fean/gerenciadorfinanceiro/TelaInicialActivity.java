@@ -37,16 +37,13 @@ public class TelaInicialActivity extends AppCompatActivity {
             Intent sobre = new Intent(TelaInicialActivity.this, SobreActivity.class);
             startActivity(sobre);
             return(true);
-        case R.id.cadastrar_categoria:
-            Intent cadastrarCategoria = new Intent(TelaInicialActivity.this, CadastrarCategoriaActivity.class);
-            startActivity(cadastrarCategoria);
-            return(true);
         case R.id.lista_categoria:
             Intent listarCategoria = new Intent(TelaInicialActivity.this,CategoriaActivity.class);
             startActivity(listarCategoria);
             return(true);
         case R.id.exit:
-            //add the function to perform here
+            Intent login = new Intent(TelaInicialActivity.this,LoginActivity.class);
+            startActivity(login);
             return(true);
         case R.id.home:
             Intent home = new Intent(TelaInicialActivity.this, TelaInicialActivity.class);
