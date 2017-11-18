@@ -1,11 +1,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".activity.MainActivity">
 
     <item
         android:id="@+id/home"
         android:icon="@drawable/icone_home"
-        app:showAsAction="always"
+        app:showAsAction="never"
         android:title="@string/nova_transacao"/>
 
 
@@ -18,7 +18,7 @@
     <item
         android:id="@+id/grafico"
         android:icon="@drawable/icone_grafico"
-        app:showAsAction="always|withText"
+        app:showAsAction="never"
         android:title="@string/titulo_grafico"/>
 
 
