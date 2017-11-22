@@ -65,6 +65,10 @@ public class UsuarioTask extends AsyncTask<Void,Void,Usuario> {
     @Override
     protected void onPostExecute(Usuario usuario) {
         progressDialog.dismiss();
-        Toast.makeText(context, usuario.getNome()+" cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+        try{
+            Toast.makeText(context, usuario.getNome()+" cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+        }catch (Exception e){
+            Toast.makeText(context,"Usuário Alterado!", Toast.LENGTH_SHORT).show();
+        }
     }
 }

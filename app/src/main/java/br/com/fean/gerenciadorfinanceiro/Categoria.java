@@ -13,12 +13,12 @@ public class Categoria implements Serializable {
 
         public Categoria(){}
 
-        public Categoria(int id, String nomeCategoria, Double orcamento) {
-            super();
-            this.id = id;
-            this.nomeCategoria = nomeCategoria;
-            this.orcamento = orcamento;
-        }
+        //public Categoria(int id, String nomeCategoria, Double orcamento) {
+          //  super();
+            //this.id = id;
+            //this.nomeCategoria = nomeCategoria;
+            //this.orcamento = orcamento;
+        //}
 
         public int getId() {
             return id;

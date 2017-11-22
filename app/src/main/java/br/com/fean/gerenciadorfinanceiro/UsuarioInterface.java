@@ -14,7 +14,7 @@ import retrofit2.http.PUT;
  */
 
 public interface UsuarioInterface {
-
+    //la no eclipse UsuarioController.
     @POST("usuario/cadastro")
     @Headers("Content-Type: application/json")
     Call<Usuario> cadastro(@Body Usuario usuario);

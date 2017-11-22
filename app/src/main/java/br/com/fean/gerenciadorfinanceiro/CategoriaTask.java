@@ -67,6 +67,10 @@ public class CategoriaTask extends AsyncTask<Void,Void,Categoria> {
     @Override
     protected void onPostExecute(Categoria categoria) {
         progressDialog.dismiss();
-        Toast.makeText(context, categoria.getNomeCategoria()+" cadastrada com sucesso!", Toast.LENGTH_SHORT).show();
+        try{
+            Toast.makeText(context, categoria.getNomeCategoria()+" cadastrada com sucesso!", Toast.LENGTH_SHORT).show();
+        }catch (Exception e){
+            Toast.makeText(context, " Categoria Alterada!", Toast.LENGTH_SHORT).show();
+        }
     }
 }

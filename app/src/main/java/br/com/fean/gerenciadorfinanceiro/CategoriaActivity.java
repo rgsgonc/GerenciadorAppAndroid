@@ -50,6 +50,10 @@ public class CategoriaActivity extends AppCompatActivity {
             Intent listarCategoria = new Intent(CategoriaActivity.this,CategoriaActivity.class);
             startActivity(listarCategoria);
             return(true);
+        case R.id.lista_usuario:
+            Intent listarUsuario = new Intent(CategoriaActivity.this,UsuarioActivity.class);
+            startActivity(listarUsuario);
+            return(true);
         case R.id.exit:
             Intent login = new Intent(CategoriaActivity.this,LoginActivity.class);
             startActivity(login);

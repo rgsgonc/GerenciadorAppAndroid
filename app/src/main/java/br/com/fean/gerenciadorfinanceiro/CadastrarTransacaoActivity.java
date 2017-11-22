@@ -39,6 +39,10 @@ public class CadastrarTransacaoActivity extends AppCompatActivity {
             Intent listaCategoria = new Intent(CadastrarTransacaoActivity.this, CategoriaActivity.class);
             startActivity(listaCategoria);
             return (true);
+        case R.id.lista_usuario:
+            Intent listarUsuario = new Intent(CadastrarTransacaoActivity.this,UsuarioActivity.class);
+            startActivity(listarUsuario);
+            return(true);
         case R.id.exit:
             Intent login = new Intent(CadastrarTransacaoActivity.this, LoginActivity.class);
             startActivity(login);

@@ -29,7 +29,6 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
                 Usuario usuarioTela = new Usuario();
 
                 if(usuarioAtual != null){
@@ -42,11 +41,7 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                 usuarioTela.setTelefone(telefone.getText().toString());
                 usuarioTela.setSenha(senha.getText().toString());
 
-
                 new UsuarioTask(v.getContext(), usuarioTela).execute();
-                
-                
-
             }
         });
 
