@@ -12,7 +12,7 @@
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1.07">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -101,6 +101,12 @@
                 android:hint="R$89,00"/>
 
         </RelativeLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="150dp"
+            android:src="@drawable/grafico" />
     </FrameLayout>
 
     <android.support.design.widget.BottomNavigationView
