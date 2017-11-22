@@ -1,10 +1,12 @@
 package br.com.fean.gerenciadorfinanceiro;
 
+import java.io.Serializable;
+
 /**
  * Created by rafael on 16/11/17.
  */
 
-public class Usuario {
+public class Usuario implements Serializable{
     private int id;
     private String nome;
     private String endereco;
@@ -74,8 +76,9 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Nome - "+this.nome+",senha - "+this.senha;
-
+        return this.nome + " - " + this.email;
     }
+
+
 
 }

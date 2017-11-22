@@ -11,6 +11,7 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
 
     private Button btnCadastrarUsuario;
     private EditText nome, endereco,email,telefone,senha;
+    private Usuario usuarioAtual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,16 +28,42 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
         btnCadastrarUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Usuario usuario = new Usuario();
-                usuario.setNome(nome.getText().toString());
-                usuario.setTelefone(telefone.getText().toString());
-                usuario.setEmail(email.getText().toString());
-                usuario.setEndereco(endereco.getText().toString());
-                usuario.setSenha(senha.getText().toString());
 
-                new UsuarioTask(v.getContext(), usuario).execute();
+
+                Usuario usuarioTela = new Usuario();
+
+                if(usuarioAtual != null){
+                    usuarioTela.setId(usuarioAtual.getId());
+                }
+
+                usuarioTela.setNome(nome.getText().toString());
+                usuarioTela.setEndereco(endereco.getText().toString());
+                usuarioTela.setEmail(email.getText().toString());
+                usuarioTela.setTelefone(telefone.getText().toString());
+                usuarioTela.setSenha(senha.getText().toString());
+
+
+                new UsuarioTask(v.getContext(), usuarioTela).execute();
+                
+                
+
             }
         });
 
+        Intent intentAtivadora = getIntent();
+        Usuario usuario = (Usuario) intentAtivadora.getSerializableExtra("usuario");
+
+        if(usuario != null){
+            nome.setText(usuario.getNome());
+            endereco.setText(usuario.getEndereco());
+            email.setText(usuario.getEmail());
+            telefone.setText(usuario.getTelefone());
+            senha.setText(usuario.getSenha());
+            usuarioAtual = usuario;
+            btnCadastrarUsuario.setText(R.string.btn_alterar_usuario);
+        }
+
     }
+    
+    
 }

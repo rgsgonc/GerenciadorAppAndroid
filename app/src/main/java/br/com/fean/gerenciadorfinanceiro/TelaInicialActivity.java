@@ -41,6 +41,10 @@ public class TelaInicialActivity extends AppCompatActivity {
             Intent listarCategoria = new Intent(TelaInicialActivity.this,CategoriaActivity.class);
             startActivity(listarCategoria);
             return(true);
+        case R.id.lista_usuario:
+            Intent listarUsuario = new Intent(TelaInicialActivity.this,UsuarioActivity.class);
+            startActivity(listarUsuario);
+            return(true);
         case R.id.exit:
             Intent login = new Intent(TelaInicialActivity.this,LoginActivity.class);
             startActivity(login);

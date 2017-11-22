@@ -42,11 +42,17 @@ public class UsuarioTask extends AsyncTask<Void,Void,Usuario> {
         Usuario responseBody = null;
 
         try {
+            Call<Usuario> call = null;
 
-            Call<Usuario> postUsuario = ApiClient.getClientWithGson()
-                    .newBuilder().build().create(UsuarioInterface.class).cadastro(usuario);
+            if(usuario.getId() !=  0){
+                call = ApiClient.getClientWithGson()
+                        .newBuilder().build().create(UsuarioInterface.class).update(usuario);
+            }else{
+                call = ApiClient.getClientWithGson()
+                        .newBuilder().build().create(UsuarioInterface.class).cadastro(usuario);
+            }
 
-            responseBody = postUsuario.execute().body();
+            responseBody = call.execute().body();
 
         } catch (Exception e){
             e.printStackTrace();
