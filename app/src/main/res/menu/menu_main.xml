@@ -3,13 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools" tools:context=".activity.MainActivity">
 
     <item
-        android:id="@+id/home"
-        android:icon="@drawable/icone_home"
-        app:showAsAction="never"
-        android:title="@string/nova_transacao"/>
-
-
-    <item
         android:id="@+id/add"
         android:icon="@drawable/icone_mais"
         app:showAsAction="always"
@@ -48,6 +41,4 @@
         app:showAsAction="never"
         android:title="@string/sair">
     </item>
-
-
 </menu>

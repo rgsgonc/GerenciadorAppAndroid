@@ -23,6 +23,13 @@
     </item>
 
     <item
+        android:id="@+id/lista_usuario"
+        android:icon="@android:drawable/ic_dialog_info"
+        app:showAsAction="never"
+        android:title="@string/usuario">
+    </item>
+
+    <item
         android:id="@+id/graficos"
         android:icon="@android:drawable/ic_dialog_info"
         app:showAsAction="never"

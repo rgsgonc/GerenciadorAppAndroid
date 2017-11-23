@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="br.com.fean.gerenciadorfinanceiro.activity.TelaInicialActivity">
+    tools:context="br.com.fean.gerenciadorfinanceiro.TelaInicialActivity">
 
     <FrameLayout
         android:id="@+id/content"
@@ -108,13 +108,5 @@
             android:layout_marginTop="150dp"
             android:src="@drawable/grafico" />
     </FrameLayout>
-
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="?android:attr/windowBackground"
-        app:menu="@menu/navigation" />
 
 </LinearLayout>
