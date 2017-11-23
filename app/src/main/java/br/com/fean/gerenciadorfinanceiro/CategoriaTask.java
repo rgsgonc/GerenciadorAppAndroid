@@ -74,7 +74,7 @@ public class CategoriaTask extends AsyncTask<Void,Void,Categoria> {
                 Toast.makeText(context, categoria.getNomeCategoria()+" cadastrada com sucesso!", Toast.LENGTH_SHORT).show();
             }
         }catch (Exception e){
-            Toast.makeText(context, " Categoria Alterada!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, " Ops.. Temos um problema! Tente novamente!", Toast.LENGTH_SHORT).show();
         }
     }
 }
