@@ -47,9 +47,13 @@ public class UsuarioActivity extends AppCompatActivity {
             Intent sobre = new Intent(UsuarioActivity.this, SobreActivity.class);
             startActivity(sobre);
             return(true);
-        case R.id.lista_categoria:
+        case R.id.lista_usuario:
             Intent listarUsuario = new Intent(UsuarioActivity.this,UsuarioActivity.class);
             startActivity(listarUsuario);
+            return(true);
+        case R.id.lista_categoria:
+            Intent listarCategoria = new Intent(UsuarioActivity.this,CategoriaActivity.class);
+            startActivity(listarCategoria);
             return(true);
         case R.id.exit:
             Intent login = new Intent(UsuarioActivity.this,LoginActivity.class);
