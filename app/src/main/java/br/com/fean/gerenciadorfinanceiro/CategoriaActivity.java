@@ -7,22 +7,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telecom.Call;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.List;
 
 public class CategoriaActivity extends AppCompatActivity {
+    private ListView listaDeCategorias;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categoria);
 
+        listaDeCategorias = (ListView) findViewById(R.id.lista_categoria);
+        registerForContextMenu(listaDeCategorias);
     }
 
     @Override
@@ -72,6 +77,22 @@ public class CategoriaActivity extends AppCompatActivity {
         setupListView();
     }
 
+    @Override
+    public void onCreateContextMenu(final ContextMenu menu, View v, final ContextMenu.ContextMenuInfo menuInfo)  {
+        MenuItem deletar =  menu.add("Deletar");
+        deletar.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
+                Categoria categoria = (Categoria) listaDeCategorias.getItemAtPosition(info.position);
+                new CategoriaDeleteTask(CategoriaActivity.this,categoria).execute();
+                //Toast.makeText(CategoriaActivity.this, "Deletar a categoria " + categoria.getNomeCategoria(), Toast.LENGTH_SHORT).show();
+
+                return false;
+            }
+        });
+    }
+
     private void setupListView() {
         new CategoriaListTask(getApplicationContext()).execute();
     }
@@ -79,7 +100,6 @@ public class CategoriaActivity extends AppCompatActivity {
     public class CategoriaListTask extends AsyncTask<Void, Void, List<Categoria>> {
 
         private Context context;
-        private ListView listaDeCategorias;
 
         public CategoriaListTask (Context context){
             this.context = context;
@@ -121,5 +141,9 @@ public class CategoriaActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    public void carregaLista(){
+        new CategoriaListTask(CategoriaActivity.this).execute();
     }
 }

@@ -2,7 +2,9 @@ package br.com.fean.gerenciadorfinanceiro;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -52,15 +54,12 @@ public class CategoriaTask extends AsyncTask<Void,Void,Categoria> {
                 call = ApiClient.getClientWithGson()
                         .newBuilder().build().create(CategoriaInterface.class).cadastro(categoria);
             }
-
-
             responseBody = call.execute().body();
 
         } catch (Exception e){
             e.printStackTrace();
             Log.e("CategoriaTask", e.getMessage());
         }
-
         return responseBody;
     }
 
@@ -76,5 +75,10 @@ public class CategoriaTask extends AsyncTask<Void,Void,Categoria> {
         }catch (Exception e){
             Toast.makeText(context, " Ops.. Temos um problema! Tente novamente!", Toast.LENGTH_SHORT).show();
         }
+        Intent intentVaiParaLista = new Intent(context, CategoriaActivity.class);
+        context.startActivity(intentVaiParaLista);
+        AppCompatActivity activity = (AppCompatActivity) this.context;
+        activity.finish();
+
     }
 }

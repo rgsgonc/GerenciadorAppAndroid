@@ -19,6 +19,17 @@ public class CadastrarTransacaoActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+
+
+       // Transacao transacao = new Transacao();
+
+        //radiobuttonCredito.isChecked();
+
+        //transacao.setTipoTransacao(TipoTransacao.RECEITA);
+
+        //senao
+
+          //      transacao.setTipoTransacao(TipoTransacao.DESPESA);
     }
 
     @Override
