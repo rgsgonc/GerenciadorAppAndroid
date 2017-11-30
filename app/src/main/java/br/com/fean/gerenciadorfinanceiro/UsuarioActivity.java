@@ -9,27 +9,34 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.List;
 
 public class UsuarioActivity extends AppCompatActivity {
 
+    private ListView listaDeUsuarios;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario);
+
+        listaDeUsuarios = (ListView) findViewById(R.id.lista_usuario);
+        registerForContextMenu(listaDeUsuarios);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_categoria, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -73,14 +80,28 @@ public class UsuarioActivity extends AppCompatActivity {
         setupListView();
     }
 
+    @Override
+    public void onCreateContextMenu(final ContextMenu menu, View v, final ContextMenu.ContextMenuInfo menuInfo)  {
+        MenuItem deletar =  menu.add("Deletar");
+        deletar.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
+                Usuario usuario = (Usuario) listaDeUsuarios.getItemAtPosition(info.position);
+                new UsuarioDeleteTask(UsuarioActivity.this,usuario).execute();
+                //Toast.makeText(UsuarioActivity.this, "Deletar a usuario " + usuario.getNome(), Toast.LENGTH_SHORT).show();
+
+                return false;
+            }
+        });
+    }
+
     private void setupListView() {
         new UsuarioActivity.UsuarioListTask(getApplicationContext()).execute();
     }
 
     public class UsuarioListTask extends AsyncTask<Void, Void, List<Usuario>> {
-
         private Context context;
-        private ListView listaDeUsuarios;
 
         public UsuarioListTask(Context context) {
             this.context = context;

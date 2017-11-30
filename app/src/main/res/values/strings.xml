@@ -43,7 +43,7 @@
     <string name="valor">Valor</string>
     <string name="cadastrar_categoria">Cadastrar Categoria</string>
     <string name="btn_alterar_categoria">Alterar Categoria</string>
-    <string name="title_activity_usuario">UsuarioActivity</string>
+    <string name="title_activity_usuario">Usuários</string>
     <string name="usuario">Usuário</string>
     <string name="btn_alterar_usuario">Alterar Usuário</string>
 </resources>

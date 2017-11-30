@@ -2,7 +2,9 @@ package br.com.fean.gerenciadorfinanceiro;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -74,5 +76,9 @@ public class UsuarioTask extends AsyncTask<Void,Void,Usuario> {
         }catch (Exception e){
             Toast.makeText(context,"Ops.. Temos um problema! Tente novamente!", Toast.LENGTH_SHORT).show();
         }
+        Intent intentVaiParaLista = new Intent(context, UsuarioActivity.class);
+        context.startActivity(intentVaiParaLista);
+        AppCompatActivity activity = (AppCompatActivity) this.context;
+        activity.finish();
     }
 }
